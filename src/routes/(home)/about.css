@@ -1,0 +1,32 @@
+.about-page {
+	display: grid;
+	align-content: center;
+	gap: 1.5rem;
+	min-height: calc(100vh - var(--navbar-height, 4rem));
+	padding-block: clamp(3rem, 8vh, 6rem);
+}
+
+.about-page__header {
+	max-width: 44rem;
+}
+
+.about-page__copy {
+	display: grid;
+	gap: 0.75rem;
+	max-width: 42rem;
+}
+
+.about-page__title {
+	margin: 0;
+	font-size: clamp(2.25rem, 7vw, 4.5rem);
+	line-height: 1;
+	font-weight: 700;
+	letter-spacing: 0;
+}
+
+.about-page__text {
+	margin: 0;
+	color: var(--color-text-muted);
+	font-size: clamp(1rem, 2vw, 1.25rem);
+	line-height: 1.65;
+}

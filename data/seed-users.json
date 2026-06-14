@@ -1,0 +1,20 @@
+{
+	"users": [
+		{
+			"id": "seed-user-admin",
+			"name": "Admin User",
+			"email": "admin@example.com",
+			"password": "admin-password",
+			"emailVerified": true,
+			"image": null
+		},
+		{
+			"id": "seed-user-galeria",
+			"name": "Galeria malarstwa",
+			"email": "galeria@example.com",
+			"password": "galeria-password",
+			"emailVerified": true,
+			"image": null
+		}
+	]
+}

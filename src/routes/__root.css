@@ -1,0 +1,19 @@
+.root-layout__content {
+	min-height: calc(100vh - var(--navbar-height, 4rem));
+}
+
+.root-state-header__title {
+	margin: 0;
+	font-size: clamp(2.25rem, 8vw, 3.75rem);
+	line-height: 0.95;
+	font-weight: 700;
+	letter-spacing: -0.05em;
+}
+
+.root-state-header__intro {
+	max-width: 40rem;
+	margin: 0;
+	color: var(--color-text-muted);
+	font-size: 1.125rem;
+	line-height: 1.65;
+}

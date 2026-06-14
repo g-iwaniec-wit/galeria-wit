@@ -1,0 +1,221 @@
+.ui-page {
+	padding-block: 2rem;
+}
+
+.ui-page--centered {
+	display: grid;
+	min-height: calc(100vh - var(--navbar-height, 4rem));
+	place-items: center;
+	padding-block: 3rem;
+}
+
+.ui-header {
+	display: grid;
+}
+
+.ui-header--sm {
+	gap: 0.5rem;
+}
+
+.ui-header--md {
+	gap: 0.75rem;
+}
+
+.ui-header--lg {
+	gap: 1rem;
+}
+
+.ui-card {
+	border: 1px solid var(--color-border);
+	background: var(--color-background);
+	padding: 2rem;
+}
+
+.ui-button,
+.ui-link--button-secondary {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid transparent;
+	border-radius: var(--radius-sm);
+	font-size: 0.875rem;
+	font-weight: 600;
+	line-height: 1;
+	transition:
+		background-color var(--transition-fast),
+		border-color var(--transition-fast),
+		color var(--transition-fast),
+		opacity var(--transition-fast);
+}
+
+.ui-button--sm,
+.ui-link--sm.ui-link--button-secondary {
+	min-height: var(--control-height-sm);
+	padding-inline: 0.875rem;
+}
+
+.ui-button--md,
+.ui-link--md.ui-link--button-secondary {
+	min-height: var(--control-height-md);
+	padding-inline: 1rem;
+}
+
+.ui-button--primary {
+	background: var(--color-text);
+	color: var(--color-background);
+}
+
+.ui-button--primary:hover:not(:disabled) {
+	background: var(--color-text-muted);
+}
+
+.ui-button--secondary,
+.ui-link--button-secondary {
+	border-color: var(--color-border-strong);
+	background: var(--color-background);
+	color: var(--color-text);
+}
+
+.ui-button--secondary:hover:not(:disabled),
+.ui-link--button-secondary:hover:not([data-disabled]) {
+	background: var(--color-background-subtle);
+}
+
+.ui-button--ghost {
+	background: transparent;
+	color: var(--color-text-muted);
+}
+
+.ui-button--ghost:hover:not(:disabled) {
+	background: var(--color-background-subtle);
+	color: var(--color-text);
+}
+
+.ui-button--danger {
+	background: var(--color-danger);
+	color: var(--color-danger-contrast);
+}
+
+.ui-button--danger:hover:not(:disabled) {
+	background: var(--color-danger-hover);
+}
+
+.ui-button:disabled,
+.ui-link[data-disabled] {
+	cursor: not-allowed;
+	opacity: 0.7;
+}
+
+.ui-link {
+	transition: color var(--transition-fast);
+}
+
+.ui-link--default {
+	color: var(--color-text);
+}
+
+.ui-link--default:hover {
+	color: var(--color-text-muted);
+}
+
+.ui-link--ghost {
+	color: var(--color-text-muted);
+}
+
+.ui-link--ghost:hover {
+	color: var(--color-text);
+}
+
+.ui-field {
+	display: grid;
+	gap: 0.5rem;
+}
+
+.ui-field__label {
+	color: var(--color-text);
+	font-size: 0.875rem;
+	font-weight: 600;
+}
+
+.ui-field__input {
+	min-height: var(--control-height-md);
+	border: 1px solid var(--color-border-strong);
+	background: var(--color-background);
+	color: var(--color-text);
+	padding-inline: 0.875rem;
+	font: inherit;
+	font-size: 1rem;
+	font-weight: 400;
+	outline: none;
+	transition:
+		border-color var(--transition-fast),
+		box-shadow var(--transition-fast);
+}
+
+.ui-field__input:focus {
+	border-color: var(--color-focus);
+	box-shadow: 0 0 0 3px rgb(115 115 115 / 0.16);
+}
+
+.ui-field[data-invalid] .ui-field__input {
+	border-color: var(--color-danger-border);
+}
+
+.ui-field__description,
+.ui-field__error {
+	font-size: 0.875rem;
+	line-height: 1.5;
+}
+
+.ui-field__description {
+	color: var(--color-text-subtle);
+}
+
+.ui-field__error {
+	color: var(--color-danger-text);
+}
+
+.ui-alert {
+	border: 1px solid var(--color-border);
+	padding: 0.75rem;
+	font-size: 0.875rem;
+	line-height: 1.5;
+}
+
+.ui-alert--danger {
+	border-color: var(--color-danger-border);
+	background: var(--color-danger-background);
+	color: var(--color-danger-text);
+}
+
+.ui-alert--info {
+	background: var(--color-background-subtle);
+	color: var(--color-text-muted);
+}
+
+.ui-avatar,
+.ui-avatar__fallback,
+.ui-avatar__image {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2rem;
+	height: 2rem;
+}
+
+.ui-avatar {
+	background: var(--color-background-muted);
+	color: var(--color-text-muted);
+	font-size: 0.75rem;
+	font-weight: 700;
+}
+
+.ui-avatar__image {
+	object-fit: cover;
+}
+
+@media (max-width: 35rem) {
+	.ui-card {
+		padding: 1.5rem;
+	}
+}

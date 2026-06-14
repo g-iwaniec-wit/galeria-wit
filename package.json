@@ -1,0 +1,60 @@
+{
+  "name": "galeria-malarstwa",
+  "private": true,
+  "engines": {
+    "node": ">=24 <26"
+  },
+  "packageManager": "pnpm@11.6.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev --port 3000",
+    "generate-routes": "tsr generate",
+    "auth:generate": "pnpm dlx auth generate --output ./src/db/auth-schema.ts --adapter drizzle --dialect postgresql -y",
+    "build": "vite build",
+    "start": "node .output/server/index.mjs",
+    "db:push": "drizzle-kit push",
+    "db:reset": "node scripts/reset-db.mjs && drizzle-kit push",
+    "db:seed": "node scripts/reset-db.mjs && drizzle-kit push && node scripts/seed.mjs",
+    "db:studio": "drizzle-kit studio",
+    "preview": "vite preview",
+    "test": "playwright test",
+    "test:a11y": "playwright test tests/a11y.spec.ts",
+    "test:unit": "vitest run",
+    "format": "biome format",
+    "lint": "biome lint",
+    "check": "biome check"
+  },
+  "dependencies": {
+    "@better-auth/passkey": "^1.6.18",
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/space-grotesk": "^5.2.10",
+    "@kobalte/core": "^0.13.11",
+    "@masonry-grid/solid-js": "^1.1.1",
+    "@tanstack/router-plugin": "^1.133.21",
+    "@tanstack/solid-router": "latest",
+    "@tanstack/solid-router-devtools": "latest",
+    "@tanstack/solid-router-ssr-query": "latest",
+    "@tanstack/solid-start": "latest",
+    "better-auth": "^1.5.3",
+    "drizzle-orm": "^0.45.2",
+    "effect": "4.0.0-beta.83",
+    "nitro": "npm:nitro-nightly@latest",
+    "pg": "^8.21.0",
+    "solid-js": "^1.9.12",
+    "vite": "^8.0.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.3",
+    "@biomejs/biome": "2.4.5",
+    "@playwright/test": "^1.60.0",
+    "@solidjs/testing-library": "^0.8.10",
+    "@tanstack/devtools-vite": "latest",
+    "@tanstack/router-cli": "^1.133.21",
+    "@types/pg": "^8.20.0",
+    "drizzle-kit": "^0.31.10",
+    "jsdom": "^28.1.0",
+    "typescript": "^6.0.2",
+    "vite-plugin-solid": "^2.11.12",
+    "vitest": "^4.1.5"
+  }
+}

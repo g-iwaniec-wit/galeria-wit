@@ -1,0 +1,228 @@
+/* Root */
+.navbar {
+	--navbar-height: 4rem;
+	--navbar-border-width: 1px;
+	--navbar-gap: 1rem;
+	--navbar-link-height: 2.5rem;
+	--navbar-link-padding: 0.75rem;
+	--navbar-menu-gap: 0.25rem;
+	--navbar-mobile-panel-padding: 1rem;
+
+	position: sticky;
+	top: 0;
+	z-index: 50;
+	border-bottom: var(--navbar-border-width) solid var(--color-border);
+	background: rgb(255 255 255 / 0.95);
+	backdrop-filter: blur(10px);
+}
+
+.navbar__root {
+	position: relative;
+}
+
+.navbar__container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--navbar-gap);
+	height: calc(var(--navbar-height) - var(--navbar-border-width));
+}
+
+.navbar__brand {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	align-items: center;
+	gap: 0.625rem;
+	color: var(--color-text);
+	line-height: 1.1;
+}
+
+.navbar__brand-logo {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;
+	height: 2.5rem;
+}
+
+.navbar__brand-image {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+	filter: brightness(0);
+	object-fit: contain;
+}
+
+.navbar__brand-copy {
+	display: grid;
+	gap: 0.125rem;
+	min-width: 0;
+}
+
+.navbar__brand-title {
+	font-size: 1rem;
+	font-weight: 700;
+	text-transform: capitalize;
+	white-space: nowrap;
+}
+
+.navbar__brand-subtitle {
+	color: var(--color-text-muted);
+	font-size: 0.75rem;
+	font-weight: 500;
+	white-space: nowrap;
+}
+
+.navbar__actions {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	margin-left: auto;
+}
+
+/* Desktop navigation */
+.navbar__desktop {
+	display: none;
+	align-items: center;
+	gap: var(--navbar-menu-gap);
+}
+
+.navbar__link,
+.navbar__mobile-link {
+	color: var(--color-text-muted);
+	font-size: 0.875rem;
+	font-weight: 500;
+}
+
+.navbar__link:hover,
+.navbar__mobile-link:hover,
+.navbar__link[data-status="active"],
+.navbar__mobile-link[data-status="active"] {
+	color: var(--color-text);
+}
+
+.navbar__link {
+	display: inline-flex;
+	align-items: center;
+	height: var(--navbar-link-height, 2.5rem);
+	padding-inline: var(--navbar-link-padding, 0.75rem);
+}
+
+.navbar__mobile-link {
+	display: block;
+	padding: 0.5rem;
+}
+
+.navbar__link--external.ui-link--button-secondary {
+	height: auto;
+	min-height: var(--control-height-sm);
+	padding-inline: 0.875rem;
+	color: var(--color-text);
+	font-weight: 600;
+}
+
+.navbar__mobile-link.navbar__link--external {
+	display: inline-flex;
+	width: fit-content;
+	margin-block-start: 0.25rem;
+}
+
+/* Auth */
+.navbar__auth,
+.navbar__account {
+	display: flex;
+	align-items: center;
+}
+
+.navbar__auth {
+	gap: 0.5rem;
+}
+
+.navbar__account {
+	gap: 0.5rem;
+}
+
+.navbar__admin-action.ui-button,
+.navbar__admin-action.ui-link--button-secondary {
+	border: 1px dashed var(--color-border-strong);
+}
+
+.navbar__account-avatar {
+	display: none;
+}
+
+.navbar__account-name {
+	display: none;
+	max-width: 10rem;
+	overflow: hidden;
+	color: var(--color-text-muted);
+	font-size: 0.875rem;
+	font-weight: 500;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* Mobile navigation */
+.navbar__mobile-trigger {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: var(--navbar-link-height);
+	height: var(--navbar-link-height);
+}
+
+.navbar__mobile-trigger-icon {
+	display: grid;
+	gap: 0.375rem;
+}
+
+.navbar__mobile-trigger-bar {
+	display: block;
+	width: 1rem;
+	height: 0.125rem;
+	background: currentColor;
+}
+
+.navbar__mobile-content {
+	border-bottom: 1px solid var(--color-border);
+	background: var(--color-background);
+	box-shadow: 0 1px 2px rgb(15 23 42 / 0.06);
+	padding-block: var(--navbar-mobile-panel-padding);
+}
+
+.navbar__mobile-nav {
+	display: grid;
+	gap: var(--navbar-menu-gap);
+}
+
+/* Responsive */
+@media (min-width: 48rem) {
+	.navbar__desktop {
+		display: flex;
+	}
+
+	.navbar__account-avatar,
+	.navbar__account-name {
+		display: inline-flex;
+	}
+
+	.navbar__mobile-trigger,
+	.navbar__mobile-content {
+		display: none;
+	}
+
+	.navbar__mobile-trigger.ui-button {
+		display: none;
+	}
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+	.navbar {
+		background: rgb(10 10 10 / 0.95);
+	}
+
+	.navbar__brand-image {
+		filter: none;
+	}
+}
