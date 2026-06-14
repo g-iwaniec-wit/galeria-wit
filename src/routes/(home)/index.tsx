@@ -68,6 +68,18 @@ function Home() {
 					</div>
 				</Show>
 			</section>
+
+			<section class="landing-instructors" aria-labelledby="instructors-title">
+				<header class="landing-instructors__header">
+					<h2 id="instructors-title" class="landing-instructors__title">
+						Prowadzący zajęcia
+					</h2>
+				</header>
+				<div class="landing-instructors__grid">
+					<p class="landing-instructors__name">Anna Kowalska</p>
+					<p class="landing-instructors__name">Jan Nowak</p>
+				</div>
+			</section>
 		</Page>
 	);
 }
